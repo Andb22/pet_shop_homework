@@ -64,9 +64,12 @@ def remove_customer_cash(customer, cash)
 end
 
 def customer_pet_count(customer)
+  if customer[:pets] == []
   return 0
+  end
+return customer[:pets].count
 end
 
 def add_pet_to_customer(customer, new_pet)
-
+  customer[:pets].push(new_pet) 
 end
