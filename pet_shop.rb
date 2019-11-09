@@ -81,13 +81,11 @@ def customer_can_afford_pet(customer, new_pet)
   return false
 end
 
-# def sell_pet_to_customer(pet_shop, pet, customer)
-#   pet_shop[:pets].delete(pet)
-#   customer[:pets].unshift(pet)
-# end
-
 def sell_pet_to_customer(pet_shop, pet, customer)
   if pet == nil
+    return 0
+  end
+  if customer[:cash] < pet[:price]
     return 0
   end
     pet_shop[:pets].delete(pet)
