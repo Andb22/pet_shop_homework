@@ -87,7 +87,10 @@ end
 # end
 
 def sell_pet_to_customer(pet_shop, pet, customer)
-  pet_shop[:pets].delete(pet)
+  if pet == nil
+    return 0
+  end
+    pet_shop[:pets].delete(pet)
     customer[:pets].push(pet)
     pet_shop[:admin][:pets_sold] += 1
     customer[:cash] -= pet[:price]
